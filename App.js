@@ -13,8 +13,9 @@ import { useState } from "react";
 
 const App = () => {
   // todos: {id: Number, textValue: string, checked: boolean }
+  // TodoList 의 객체가 담긴 배열
   const [todos, setTodos] = useState([]);
-  // TodoList 추가 메소드
+  // TodoList 추가 메소드 TodoInsert 컴포넌트로 전달
   const addTodo = (props) => {
     setTodos([
       ...todos,
@@ -27,7 +28,7 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  //check 항목 메소스
+  //check 항목 추가 메소스, id를 받아와서 check값을 반대로 변경해줌
   const onCheck = (id) => (e) => {
     setTodos(
       todos.map((todo) =>

@@ -6,11 +6,11 @@ const TodoInsert = ({ onAddTodo }) => {
   //TextInput의 텍스트 값을 받아오기 위해 사용
   const [newTodoItem, setNewTodoItem] = useState("");
 
-  //사용자가 입력한 텍스트 값의 변화를 관리하기 위한 메소드
+  //사용자가 입력한 텍스트 값의 변화를 인식하기 위한 메소드
   const todoInputHandler = (props) => {
     setNewTodoItem(props);
   };
-  //TodoList 추가해주는 메소드
+  //TodoList 추가해주는 메소드, onAddTodo는 사용자가 입력한 text 값을 전달 받아 추가 후 공백을 초기화
   const addTodoHandler = () => {
     onAddTodo(newTodoItem);
     setNewTodoItem("");
